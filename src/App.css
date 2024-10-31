@@ -1,11 +1,22 @@
 .header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
   margin-top: 50px;
+  margin-left: 80px;
+  margin-right: 80px;
 }
 
 .header__logo {
   width: 500px;
   height: auto;
+  filter: drop-shadow(0 0 15px red); 
+}
+
+.header__hero {
+  width: 100px;
+  height: 100px;
+  background-color: #FFCC00;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 15px red); 
 }

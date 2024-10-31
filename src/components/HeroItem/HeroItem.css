@@ -1,0 +1,52 @@
+@keyframes gradientAnimationBorder {
+  0% {
+    box-shadow: 0 0 15px 0 rgba(255, 153, 0, 1);
+    border-color: rgba(255, 153, 0, 1);
+  }
+  50% {
+    box-shadow: 0 0 15px 0 rgba(255, 0, 0, 1);
+    border-color: rgba(255, 0, 0, 1);
+  }
+  100% {
+    box-shadow: 0 0 15px 0 rgba(255, 153, 0, 1);
+    border-color: rgba(255, 153, 0, 1);
+  }
+}
+
+@keyframes gradientAnimationBorderHero {
+  0% {
+    box-shadow: 0 0 15px 0 rgba(255, 0, 0, 1);
+    border-color: rgba(255, 0, 0, 1);
+  }
+  50% {
+    box-shadow: 0 0 15px 0 rgba(255, 102, 102, 1);
+    border-color: rgba(255, 102, 102, 1);
+  }
+  100% {
+    box-shadow: 0 0 15px 0 rgba(255, 0, 0, 1);
+    border-color: rgba(255, 0, 0, 1);
+  }
+}
+
+.hero__node {
+  color: black;
+  background-color: #FF5733;
+  border: 2px solid transparent;
+  animation: gradientAnimationBorderHero 5s infinite;
+}
+
+.film__node {
+  padding: 10px;
+  background-color: #FFC107;
+  border: 2px solid transparent;
+  animation: gradientAnimationBorder 5s infinite;
+
+}
+
+.ship__node {
+  padding: 10px;
+  background-color: #FFEB3B;
+  border: 2px solid transparent;
+  animation: gradientAnimationBorder 5s infinite;
+}
+

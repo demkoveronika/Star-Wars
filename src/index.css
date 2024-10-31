@@ -1,4 +1,23 @@
 body {
-  margin: 10px;
+  margin: 20px;
   background-color: black;
+  font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 400;
+  font-style: normal;
+
+  animation: gradientAnimation 5s ease-in-out infinite;
+  height: 100vh; 
 }
+
+@keyframes gradientAnimation {
+  0% {
+      background: rgba(0, 0, 0, 1);
+  }
+  50% {
+      background: rgba(30, 0, 0, 1);
+  }
+  100% {
+      background: rgba(0, 0, 0, 1); 
+  }
+}
+

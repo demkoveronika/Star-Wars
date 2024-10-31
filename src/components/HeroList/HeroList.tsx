@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Hero } from "../../types/Hero";
+import { useEffect, useState } from "react";
 import { fetchHeroes } from "../../api/starWarsApi";
-import './HeroList.css';
+
+import { Hero } from "../../types/Hero";
 import { Loader } from "../Loader/Loader";
+import { Link } from "react-router-dom";
+
+import './HeroList.css';
 
 export const HeroList = () => {
   const [heroes, setHeroes] = useState<Hero[]>([]);
@@ -48,7 +51,6 @@ export const HeroList = () => {
     };
   }, [hasMore, currentPage]);
 
-
   return (
     <>
       {isLoading && <Loader />}
@@ -57,7 +59,9 @@ export const HeroList = () => {
           <ul className="hero__list">
             {heroes.length > 0 ? (
               heroes.map((hero, index) => (
-                <li key={index} className="hero__item">{hero.name}</li>
+                <li key={index} className="hero__item">
+                  <Link to={`hero/${hero.id}`} className="hero__link">{hero.name}</Link>
+                </li>
               ))
             ) : (
               <li>Not found</li>
