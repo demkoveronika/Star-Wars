@@ -18,6 +18,8 @@ export const HeroItem = () => {
   const [nodes, setNodes] = useNodesState([]);
   const [edges, setEdges] = useEdgesState([]);
 
+  // Fetch ships
+
   useEffect(() => {
     const fetchShips = async () => {
       try {
@@ -31,6 +33,8 @@ export const HeroItem = () => {
 
     fetchShips();
   }, []);
+
+  // Fetch hero details and related films and ships based on heroId
 
   useEffect(() => {
     const getHero = async () => {
@@ -53,6 +57,8 @@ export const HeroItem = () => {
 
         const newNodes: Node[] = [heroNode];
         const newEdges: Edge[] = [];
+
+        // Loop through the hero's films to create film nodes and edges
 
         hero.films.forEach((filmId: number, filmIndex: number) => {
           const film = films.find(f => f.episode_id === filmId);
@@ -79,6 +85,8 @@ export const HeroItem = () => {
             console.log('Filtered:', filteredShips)
 
             const shipsRowOffset = 300;
+
+            // Loop through the filtered ships to create ship nodes and edges
 
             filteredShips.forEach((ship, shipIndex: number) => {
               if (ship) {

@@ -14,6 +14,8 @@ export const HeroList = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [hasMore, setHasMore] = useState<boolean>(true);
 
+  // Fetch heroes for the current page
+
   useEffect(() => {
     const getHeroes = async () => {
       if (!hasMore) return;
@@ -21,6 +23,7 @@ export const HeroList = () => {
       setIsLoading(true);
       try {
         const data = await fetchHeroes(currentPage);
+        console.log('Завантажені герої:', data.results);
         setHeroes(prevHeroes => [...prevHeroes, ...data.results]);
         setHasMore(data.results.length > 0);
       } catch (error) {
@@ -32,6 +35,8 @@ export const HeroList = () => {
 
     getHeroes();
   }, [currentPage, hasMore])
+
+  // Calculate if the user scrolled close to the bottom
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,8 +64,10 @@ export const HeroList = () => {
           <ul className="hero__list">
             {heroes.length > 0 ? (
               heroes.map((hero, index) => (
-                <li key={index} className="hero__item">
-                  <Link to={`hero/${hero.id}`} className="hero__link">{hero.name}</Link>
+                <li key={index} className="hero__item" >
+                  <Link to={`hero/${hero.id}`} className="hero__link" data-testid={'hero-name'}>
+                    {hero.name}
+                  </Link>
                 </li>
               ))
             ) : (

@@ -30,14 +30,14 @@
 
 .hero__node {
   color: black;
-  background-color: #FF5733;
+  background-color: #FFFFFF;
   border: 2px solid transparent;
   animation: gradientAnimationBorderHero 5s infinite;
 }
 
 .film__node {
   padding: 10px;
-  background-color: #FFC107;
+  background-color: #FFFFFF;
   border: 2px solid transparent;
   animation: gradientAnimationBorder 5s infinite;
 
@@ -45,7 +45,7 @@
 
 .ship__node {
   padding: 10px;
-  background-color: #FFEB3B;
+  background-color: #FFFFFF;
   border: 2px solid transparent;
   animation: gradientAnimationBorder 5s infinite;
 }
